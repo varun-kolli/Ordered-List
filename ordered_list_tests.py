@@ -118,6 +118,11 @@ class TestLab4(unittest.TestCase):
         t.add(2)
         self.assertEqual([2, 1], t.python_list_reversed())
 
+    def test_for_good_measure(self):
+        l = OrderedList()
+        l.add(20)
+        self.assertEqual(l.pop(0), 20)
+
 
 
 if __name__ == '__main__':

@@ -77,7 +77,8 @@ class OrderedList:
         if ref.next.item == item: #start
             temp = self.dummy.next.next
             self.dummy.next = temp
-            temp.prev = self.dummy
+            if temp != None:
+                temp.prev = self.dummy
             return True
 
         elif ref.prev.item == item: #end
@@ -88,7 +89,6 @@ class OrderedList:
             return True
 
         else:
-
             while ref.next != None:
                 if ref.item == item:
                     break
@@ -200,4 +200,8 @@ class OrderedList:
            MUST have O(n) performance'''
         count = 0
         return self.size_helper(self.dummy.next, count)
+
+l = OrderedList()
+l.add(20)
+print(l.python_list_reversed())
 
